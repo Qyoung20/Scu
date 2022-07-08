@@ -1,0 +1,15 @@
+SQL> start create.sql
+
+Table created.
+
+
+Procedure created.
+
+SQL> select * from moviereviews
+  2  ;
+
+MOVIENAME                 COMMENTS                                              
+------------------------- ----------------------------------------              
+BraveHeart                Hard to like this movie anymore                       
+
+SQL> 

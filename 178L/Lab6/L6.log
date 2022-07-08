@@ -1,0 +1,223 @@
+SQL> spool
+currently spooling to L6.lst
+SQL> /*---------Tables--------*/
+SQL> start table.sql
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+SQL> /*-------E 1------*/
+SQL> set serveroutput on;
+SQL> start e1.sql
+
+Trigger created.
+
+No errors.
+From Trigger Customer NO:
+c1 Customer Name: Smith                               
+
+1 row created.
+
+From Trigger Customer NO:
+c2 Customer Name: Jones                               
+
+1 row created.
+
+From Trigger Customer NO:
+c3 Customer Name: Peters                              
+
+1 row created.
+
+From Trigger Customer NO:
+c20 Customer Name: Chen                               
+
+1 row created.
+
+From Trigger Customer NO:
+c33 Customer Name: Williams                           
+
+1 row created.
+
+SQL> start e1.sql
+
+Trigger created.
+
+No errors.
+SQL> alter trigger display_customer_trig disable
+  2  ;
+
+Trigger altered.
+
+SQL> /*---------E 2-----*/
+SQL> start ex2.sql
+
+Trigger created.
+
+SQL> start ex2.sql
+
+Trigger created.
+
+No errors.
+SQL> start e2.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> select * from Totlas_6;
+select * from Totlas_6
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select * from Totals_6;
+
+CUSTN TOTALAMOUNT                                                               
+----- -----------                                                               
+c1           7000                                                               
+c2           9000                                                               
+c33           500                                                               
+c20           150                                                               
+
+SQL> /*------E4------*/
+SQL> start ex4.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER ACCT_CUST_TRIG:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+17/3     PL/SQL: SQL Statement ignored                                          
+18/35    PL/SQL: ORA-00936: missing expression                                  
+SQL> start ex4.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER ACCT_CUST_TRIG:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+13/3     PL/SQL: SQL Statement ignored                                          
+14/35    PL/SQL: ORA-00936: missing expression                                  
+SQL> start ex4.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER ACCT_CUST_TRIG:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+13/2     PL/SQL: SQL Statement ignored                                          
+15/2     PL/SQL: ORA-00936: missing expression                                  
+SQL> ( select * from TOTALS_6 where custno= :new.custno )
+  2  
+SQL> start ex4.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER ACCT_CUST_TRIG:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+12/2     PL/SQL: SQL Statement ignored                                          
+14/2     PL/SQL: ORA-00936: missing expression                                  
+SQL> start ex4.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER ACCT_CUST_TRIG:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+11/2     PL/SQL: SQL Statement ignored                                          
+13/2     PL/SQL: ORA-00936: missing expression                                  
+SQL> delete from account_6;
+delete from account_6
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> delete from accounts_6
+  2  ;
+
+6 rows deleted.
+
+SQL> delete from totals_6;
+
+4 rows deleted.
+
+SQL> start e4.sql
+insert into ACCOUNTS_6 values('a1523','checking',2000.00,'c1')
+            *
+ERROR at line 1:
+ORA-04098: trigger 'QYOUNG.ACCT_CUST_TRIG' is invalid and failed re-validation 
+
+
+insert into ACCOUNTS_6 values('a2134','saving',5000.00,'c1')
+            *
+ERROR at line 1:
+ORA-04098: trigger 'QYOUNG.ACCT_CUST_TRIG' is invalid and failed re-validation 
+
+
+insert into ACCOUNTS_6 values('a4378','checking',1000.00,'c2')
+            *
+ERROR at line 1:
+ORA-04098: trigger 'QYOUNG.ACCT_CUST_TRIG' is invalid and failed re-validation 
+
+
+insert into ACCOUNTS_6 values('a5363','saving',8000.00,'c2')
+            *
+ERROR at line 1:
+ORA-04098: trigger 'QYOUNG.ACCT_CUST_TRIG' is invalid and failed re-validation 
+
+
+insert into ACCOUNTS_6 values('a7236','checking',500.00,'c33')
+            *
+ERROR at line 1:
+ORA-04098: trigger 'QYOUNG.ACCT_CUST_TRIG' is invalid and failed re-validation 
+
+
+insert into ACCOUNTS_6 values('a8577','checking',150.00,'c20')
+            *
+ERROR at line 1:
+ORA-04098: trigger 'QYOUNG.ACCT_CUST_TRIG' is invalid and failed re-validation 
+
+
+SQL> /*------E5------*/
+SQL> start e5.sql
+
+Trigger created.
+
+No errors.
+SQL> start e52.sql;
+UPDATE BANKCUST_6
+       *
+ERROR at line 1:
+ORA-20999: Cannot update a Primary Key 
+ORA-06512: at "QYOUNG.NOUPDATEPK_TRIG", line 3 
+ORA-04088: error during execution of trigger 'QYOUNG.NOUPDATEPK_TRIG' 
+
+
+SQL> /*----P2-----*/
+SQL> spool off

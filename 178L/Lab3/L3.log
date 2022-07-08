@@ -1,0 +1,342 @@
+SQL> /*------------part 1 create tables---------*/
+SQL> create table L_emp(
+  2  empno int primary key,
+  3  empname varchar(10),
+  4  deptId varchar(5));
+
+Table created.
+
+SQL> create table L_dept (
+  2  deptid varchar(5),
+  3  
+SQL> create table l_dept(
+  2  deptid varchar(5) primary key,
+  3  deptname varchar(10),
+  4  budget number(10,2));
+
+Table created.
+
+SQL> start script.sql
+SP2-0310: unable to open file "script.sql"
+SQL> start
+SP2-1506: START, @ or @@ command has no arguments
+SQL> /*--------run script part 1--------------*/
+SQL> start scrpit.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> /*-----------part 1 a---------*/
+SQL> select * from l_emp
+  2  ;
+
+     EMPNO EMPNAME    DEPTI                                                     
+---------- ---------- -----                                                     
+         1 smith      d1                                                        
+         2 jones      d2                                                        
+         3 wayne      d1                                                        
+         4 moor       d3                                                        
+         5 king       d1                                                        
+         6 chen       d1                                                        
+         7 winger     d3                                                        
+
+7 rows selected.
+
+SQL> /*------------part 1 b------------*/
+SQL> select *from L_dept;
+
+DEPTI DEPTNAME       BUDGET                                                     
+----- ---------- ----------                                                     
+d1    Research       200000                                                     
+d2    Devt           600000                                                     
+d3    Testing        100000                                                     
+d4    Advert         700000                                                     
+d9    HR             700000                                                     
+
+SQL> /*-------part 1 exercise 1-------*/
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> select empno,empname from l_emp, ldept where deptname = 'research' ;
+select empno,empname from l_emp, ldept where deptname = 'research' 
+                                 *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select empno,empname from l_emp, l_dept where deptname = 'research';
+
+no rows selected
+
+SQL> select empno,empname from l_emp, l_dept where deptname = 'Research';
+
+     EMPNO EMPNAME                                                              
+---------- ----------                                                           
+         1 smith                                                                
+         2 jones                                                                
+         3 wayne                                                                
+         4 moor                                                                 
+         5 king                                                                 
+         6 chen                                                                 
+         7 winger                                                               
+
+7 rows selected.
+
+SQL> /* the above shows all the
+SQL> names and employee numbers but does not effectively
+SQL> join emp and dept
+SQL> the query needs a join statement*/
+SQL> commit
+  2  ;
+
+Commit complete.
+
+SQL> /* correct query for E1 with a join statemnt*/
+SQL> select empno, empname from L_emp inner join l_dept on l_emp.deptid = l_dept.deptid;
+
+     EMPNO EMPNAME                                                              
+---------- ----------                                                           
+         1 smith                                                                
+         2 jones                                                                
+         3 wayne                                                                
+         4 moor                                                                 
+         5 king                                                                 
+         6 chen                                                                 
+         7 winger                                                               
+
+7 rows selected.
+
+SQL> select empno, empname from L_emp inner join l_dept on l_emp.deptid = l_dept.deptid where deptname = 'Research';
+
+     EMPNO EMPNAME                                                              
+---------- ----------                                                           
+         1 smith                                                                
+         3 wayne                                                                
+         5 king                                                                 
+         6 chen                                                                 
+
+SQL> /*----above is correct ---*/
+SQL> /
+
+     EMPNO EMPNAME                                                              
+---------- ----------                                                           
+         1 smith                                                                
+         3 wayne                                                                
+         5 king                                                                 
+         6 chen                                                                 
+
+SQL> /*
+SQL> 
+SQL> 
+SQL> ----------- Exercise 2-------*/
+SQL> select empno, empname from L_emp, L_dept where l_dept.deptid= l_emp.deptid and deptname='Research';
+
+     EMPNO EMPNAME                                                              
+---------- ----------                                                           
+         1 smith                                                                
+         3 wayne                                                                
+         5 king                                                                 
+         6 chen                                                                 
+
+SQL> /*----------Exercise 3-------*/
+SQL> /* using a squery and subquery */
+SQL> commit;
+
+Commit complete.
+
+SQL> select empno, empname
+  2  from l_emp where l_emp.deptid = (select deptid from l_dept where deptname = 'Research');
+
+     EMPNO EMPNAME                                                              
+---------- ----------                                                           
+         1 smith                                                                
+         3 wayne                                                                
+         5 king                                                                 
+         6 chen                                                                 
+
+SQL> /*--- query ok for only single varriable constraints need an in statement otherwise---*/
+SQL> commit;
+
+Commit complete.
+
+SQL> /*----------Exercise 4---------*/
+SQL> select empno, empname from l_emp where l_emp.deptid = (select deptid from l_dept where dudget > 100000);
+select empno, empname from l_emp where l_emp.deptid = (select deptid from l_dept where dudget > 100000)
+                                                                                       *
+ERROR at line 1:
+ORA-00904: "DUDGET": invalid identifier 
+
+
+SQL> select empno, empname from l_emp where l_emp.deptid = (select deptid from l_dept where budget > 100000);
+select empno, empname from l_emp where l_emp.deptid = (select deptid from l_dept where budget > 100000)
+                                                       *
+ERROR at line 1:
+ORA-01427: single-row subquery returns more than one row 
+
+
+SQL> commit;
+
+Commit complete.
+
+SQL> /*------------------Exercise 5-----------*/
+SQL> select empno, empname from l_emp where l_emp.deptid in (select deptid from l_dept where budget > 100000);
+
+     EMPNO EMPNAME                                                              
+---------- ----------                                                           
+         1 smith                                                                
+         2 jones                                                                
+         3 wayne                                                                
+         5 king                                                                 
+         6 chen                                                                 
+
+SQL> /* displays correct people whos
+SQL> budget is above 100000 */
+SQL> commit;
+
+Commit complete.
+
+SQL> /*------------Exercise 6---------*/
+SQL> select deptname from l_dept where budget in ( select max(budget) from l_dept);
+
+DEPTNAME                                                                        
+----------                                                                      
+Advert                                                                          
+HR                                                                              
+
+SQL> /* need an in statement since there are two
+SQL> maxiumum budgets and not just one.
+SQL> = statement ok if there was no equality*/
+SQL> commit;
+
+Commit complete.
+
+SQL> /*---------Exercise 7--------*/
+SQL> select deptname from l_dept where budget >= all(select budget from l_dept);
+
+DEPTNAME                                                                        
+----------                                                                      
+HR                                                                              
+Advert                                                                          
+
+SQL> /* same as in statement selects multiple not just one*/
+SQL> commit;
+
+Commit complete.
+
+SQL> /*-----------Experiment 9-------*/
+SQL> /*----------Experiment 8--------*/
+SQL> select count(*)
+  2  LargebudgetDpts from l_dept where budget in (select budget from l_dept where budget > 100000);
+
+LARGEBUDGETDPTS                                                                 
+---------------                                                                 
+              4                                                                 
+
+SQL> /* gives us count of budgets greater that specified amount*/
+SQL> commit;
+
+Commit complete.
+
+SQL> /*------------Experiment 9-----------*/
+SQL> select budget Budger, count(*) HowMany from L_dept where budget >100000 group by (budget);
+
+    BUDGER    HOWMANY                                                           
+---------- ----------                                                           
+    600000          1                                                           
+    200000          1                                                           
+    700000          2                                                           
+
+SQL> /* shows the amount and the frequency of that number occuring*/
+SQL> start script.sql
+SP2-0310: unable to open file "script.sql"
+SQL> start script.sql
+SP2-0310: unable to open file "script.sql"
+SQL> start script.sql
+SP2-0310: unable to open file "script.sql"
+SQL> start script
+SP2-0310: unable to open file "script.sql"
+SQL> start script
+SP2-0310: unable to open file "script.sql"
+SQL> start script.sql;
+SP2-0310: unable to open file "script.sql"
+SQL> stop script.sql
+SP2-0734: unknown command beginning "stop scrip..." - rest of line ignored.
+SQL> insert into l_dept (deptid, deptname, budget) values('d5', 'med', 200000);
+
+1 row created.
+
+SQL> insert into l_dept (deptid, deptname, budget) values ('d6', 'food', 500000);
+
+1 row created.
+
+SQL> insert into l_dept (deptid, deptname, budget) values ('d7', 'school', 100000);
+
+1 row created.
+
+SQL> insert into l_dept (deptid, deptname, budget) values ('d8', 'house', 200000);
+
+1 row created.
+
+SQL> select budget Budger, count(*) HowMany from L_dept where budget >100000 group by (budget);
+
+    BUDGER    HOWMANY                                                           
+---------- ----------                                                           
+    600000          1                                                           
+    200000          3                                                           
+    700000          2                                                           
+    500000          1                                                           
+
+SQL> /* shows the added budgets*/
+SQL> commit;
+
+Commit complete.
+
+SQL> /*--------Exercise 10-------*/
+SQL> select budget Budget, count(*) EqualorGreaterThan2 from l_dept where budget > 100000 group by (budget) having count(*) >= 2;
+
+    BUDGET EQUALORGREATERTHAN2                                                  
+---------- -------------------                                                  
+    200000                   3                                                  
+    700000                   2                                                  
+
+SQL> /* shows budgets greater than 100000 and have a frequency of 2 or more*/
+SQL> commit;
+
+Commit complete.
+
+SQL> /*---------end of part 1----------*/
+SQL> quit

@@ -1,0 +1,18 @@
+SQL> update accounts_6
+  2  set amount = 1000
+  3  where accountno = 'a1523';
+update accounts_6
+       *
+ERROR at line 1:
+ORA-04098: trigger 'QYOUNG.ACCT_CUST_TRIG' is invalid and failed re-validation 
+
+
+SQL> /*------ex3--------*/
+SQL> start ex3.sql
+update Accounts_6
+       *
+ERROR at line 1:
+ORA-04098: trigger 'QYOUNG.ACCT_CUST_TRIG' is invalid and failed re-validation 
+
+
+SQL> 

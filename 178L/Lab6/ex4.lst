@@ -1,0 +1,34 @@
+SQL> start ex4.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER ACCT_CUST_TRIG:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+11/2     PL/SQL: SQL Statement ignored                                          
+13/2     PL/SQL: ORA-00936: missing expression                                  
+SQL> 
+SQL> start ex4.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER ACCT_CUST_TRIG:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+7/3      PL/SQL: SQL Statement ignored                                          
+8/60     PL/SQL: ORA-00906: missing left parenthesis                            
+11/2     PL/SQL: SQL Statement ignored                                          
+13/2     PL/SQL: ORA-00936: missing expression                                  
+SQL> start ex4.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER ACCT_CUST_TRIG:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+11/2     PL/SQL: SQL Statement ignored                                          
+13/2     PL/SQL: ORA-00936: missing expression                                  
+SQL> 

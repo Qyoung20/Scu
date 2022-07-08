@@ -1,0 +1,21 @@
+
+                                             Employee Listing  June 9, 2022                                             
+                                                                                                                        
+First                Last                 Title                                 Salary                                  
+-------------------- -------------------- ------------------------------ -------------                                  
+quin                 young                director                           $1000,000                                  
+niuq                 gnuoy                rotcerid                                  $1                                  
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     COEN 178 Lab-8                                                     
+

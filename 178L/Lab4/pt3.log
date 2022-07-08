@@ -1,0 +1,136 @@
+SQL> select * from l_memeber;
+
+no rows selected
+
+SQL> create table l_p(
+  2  id integer primary key,
+  3  name varchar (30),
+  4  age integer);
+
+Table created.
+
+SQL> create table l_m(
+  2  id integer,
+  3  clubname varchar(25),
+  4  joineddate date);
+
+Table created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> start script.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> commit;
+
+Commit complete.
+/*----------E 3.1---------*/
+SQL> select id, joineddate, sysdate currentdate, floor(months_between(sysdate, joineddate)/12) years,  MOD(floor(months_between(sysdate, joineddate)), 12) months from l_m;
+
+        ID JOINEDDAT CURRENTDA      YEARS     MONTHS                            
+---------- --------- --------- ---------- ----------                            
+        10 11-MAR-15 05-MAY-22          7          1                            
+        15 14-APR-20 05-MAY-22          2          0                            
+        17 20-OCT-21 05-MAY-22          0          6                            
+        19 20-SEP-21 05-MAY-22          0          7                            
+        25 02-MAY-19 05-MAY-22          3          0                            
+
+
+SQL> select id, clubname, joineddate from l_m where joineddate <= all(select joineddate from l_m);
+
+        ID CLUBNAME                  JOINEDDAT                                  
+---------- ------------------------- ---------                                  
+        10 tennis                    11-MAR-15                                  
+
+SQL> /* select * from l_m;*/
+SQL> /*------------E 3.2--------*/
+SQL> select id, name from l_p where exists (select * from l_m where l_p.id = l_m.id);
+
+        ID NAME                                                                 
+---------- ------------------------------                                       
+        10 smith                                                                
+        15 jones                                                                
+        17 green                                                                
+        19 brown                                                                
+        25 mart                                                                 
+
+SQL> select id, name from l_p where exists (select * from l_m);
+
+        ID NAME                                                                 
+---------- ------------------------------                                       
+        10 smith                                                                
+        15 jones                                                                
+        16 grey                                                                 
+        17 green                                                                
+        18 sander                                                               
+        19 brown                                                                
+        25 mart                                                                 
+
+7 rows selected.
+
+
+SQL> select id, name from l_p where not exists (select * from l_m where l_p.id =  l_m.id);
+
+        ID NAME                                                                 
+---------- ------------------------------                                       
+        18 sander                                                               
+        16 grey                                                                 
+
+/*-----------E 3.3-------*/
+/*--------not memebers--------*/
+
+SQL> select l_p.id, l_p.name from l_p left outer join l_m on l_m.id = l_p.id where l_m.id is null;
+
+        ID NAME                                                                 
+---------- ------------------------------                                       
+        18 sander                                                               
+        16 grey                                                                 
+
+SQL> /*-------- members of club----------*/
+SQL> select l_p.id, l_p.name from l_p inner join l_m on l_m.id = l_p.id;
+
+        ID NAME                                                                 
+---------- ------------------------------                                       
+        10 smith                                                                
+        15 jones                                                                
+        17 green                                                                
+        19 brown                                                                
+        25 mart                                                                 
+
+SQL> spool off

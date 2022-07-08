@@ -1,0 +1,54 @@
+SQL> select * from l_dept
+  2  ;
+
+DEPTI DEPTNAME       BUDGET                                                     
+----- ---------- ----------                                                     
+d1    Research       200000                                                     
+d2    Devt           600000                                                     
+d3    Testing        100000                                                     
+d4    Advert         700000                                                     
+d9    HR             700000                                                     
+d5    med            200000                                                     
+d6    food           500000                                                     
+d7    school         100000                                                     
+d8    house          200000                                                     
+
+9 rows selected.
+
+SQL> select * from l_emp;
+
+     EMPNO EMPNAME    DEPTI                                                     
+---------- ---------- -----                                                     
+         1 smith      d1                                                        
+         2 jones      d2                                                        
+         3 wayne      d1                                                        
+         4 moor       d3                                                        
+         5 king       d1                                                        
+         6 chen       d1                                                        
+         7 winger     d3                                                        
+
+7 rows selected.
+
+SQL> select deptid Department, count(*) LargestDept from l_emp group by (deptid) having max(count(*));
+select deptid Department, count(*) LargestDept from l_emp group by (deptid) having max(count(*))
+                                                                                       *
+ERROR at line 1:
+ORA-00935: group function is nested too deeply 
+
+
+SQL> select deptid Department, max(count(*)) Employed from l_emp group by (deptid);
+select deptid Department, max(count(*)) Employed from l_emp group by (deptid)
+       *
+ERROR at line 1:
+ORA-00937: not a single-group group function 
+
+
+SQL> select deptname from l_dept where deptid = (select deptid from (select deptid, count(deptid) from l_emp
+  2  group by deptid order by count(deptid) desc) where rownum =1);
+
+DEPTNAME                                                                        
+----------                                                                      
+Research                                                                        
+
+SQL> /* selects department that has the largest num of employees by making only the top num of id's be shown*/
+SQL> spool stop

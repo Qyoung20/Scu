@@ -1,0 +1,786 @@
+SQL> spool
+currently spooling to rec.lst
+SQL> create table customer(
+  2  custid char(5),
+  3  firstname char(10,
+  4  0;
+firstname char(10,
+                 *
+ERROR at line 3:
+ORA-00907: missing right parenthesis 
+
+
+SQL> create table customer(
+  2  custid char(5),
+  3  firstname char(10),
+  4  lastname char(15),
+  5  city char(10),
+  6  Primary key (custid)
+  7  );
+create table customer(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> create table cust(
+  2  custid char(5),
+  3  firstname char(10),
+  4  lastname char(15),
+  5  city char(10),
+  6  primary key(custid)
+  7  );
+
+Table created.
+
+SQL> start ins.sql
+  8  ;
+('c1','John','Smith','SJ'),
+                          *
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> start ins.sql
+('c1','John','Smith','SJ'),
+                          *
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> start ins.sql
+
+1 row created.
+
+('c2', 'Mary', 'Jones','SFO')
+ *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+('a1', 'Vincent','Chen','SJ')
+ *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+('a12', 'Greg', 'King','SJ')
+ *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+('c7', 'James','Bond','LA')
+ *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+('x10', 'Susan','Blogg','SFO')
+ *
+ERROR at line 1:
+ORA-00928: missing SELECT keyword 
+
+
+SQL> start ins.sql
+insert into cust(custid, firstname, lastname, city) values
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00962936) violated 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> create table delser(
+  2  serviceid char(10),
+  3  item char(15),
+  4  location char(15),
+  5  servicefee numeric(5,2),
+  6  primary key(serviceid)
+  7  );
+
+Table created.
+
+SQL> start ins.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> create table scedule(
+  2  serviceid char not null,
+  3  custid char not null,
+  4  day char(2) not null,
+  5  check (day in ('m','t','w','r','f')
+  6  );
+)
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> create table scedule(
+  2    2  serviceid char not null,
+  3    3  custid char not null,
+  4    4  day char(2) not null,
+  5    5  check (day in ('m','t','w','r','f')
+  6    6  );
+  2  serviceid char not null,
+  *
+ERROR at line 2:
+ORA-00904: : invalid identifier 
+
+
+SQL> create table scedule(
+  2    2  serviceid char not null,
+  3    3  custid char not null,
+  4    4  day char(2) not null,
+  5    5  check (day in ('m','t','w','r','f')
+  6    6  );
+  2  serviceid char not null,
+  *
+ERROR at line 2:
+ORA-00904: : invalid identifier 
+
+
+SQL> create table scedule(
+  2   serviceid char not null,
+  3    3  custid char not null,
+  4    4  day char(2)
+  5  check (day in ('m','t','w','r','f'))
+  6  );
+  3  custid char not null,
+  *
+ERROR at line 3:
+ORA-00904: : invalid identifier 
+
+
+SQL> create table sced(
+  2  serviceid char not null,
+  3  custid char not null,
+  4  day char(2) not null,
+  5  check (day in('m','t','w','r','f'))
+  6  foreign key(serviceid) references delser(serviceid)
+  7  foreign key(custid) references cust(custid)
+  8  );
+foreign key(serviceid) references delser(serviceid)
+*
+ERROR at line 6:
+ORA-00907: missing right parenthesis 
+
+
+SQL> create table sced(
+  2  serviceid char not null,
+  3  custid char not null,
+  4  day char(2) not null,
+  5  check (day in('m','t','w','r','f'))
+  6  
+SQL> create table sced(
+  2  serviceid char not null,
+  3  custid char not null,
+  4  day char(2) not null,
+  5  check (day in('m','t','w','r','f')),
+  6  foreign key(serviceid) references delser(serviceid),
+  7  foreign key(custid) references cust(custid)
+  8  );
+
+Table created.
+
+SQL> start ins.sql
+insert into delser(serviceid, item, location, servicefee) values
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00962937) violated 
+
+
+insert into delser(serviceid, item, location, servicefee) values
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00962937) violated 
+
+
+insert into delser(serviceid, item, location, servicefee) values
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00962937) violated 
+
+
+insert into delser(serviceid, item, location, servicefee) values
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00962937) violated 
+
+
+insert into delser(serviceid, item, location, servicefee) values
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00962937) violated 
+
+
+insert into delser(serviceid, item, location, servicefee) values
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00962937) violated 
+
+
+SQL> start ins.sql
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+SQL> commit;
+
+Commit complete.
+
+SQL> start ins.sql
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+insert into sced(sercviceid,custid,day) values
+                 *
+ERROR at line 1:
+ORA-00904: "SERCVICEID": invalid identifier 
+
+
+SQL> start ins.sql
+('dsg1','c1','m')
+ *
+ERROR at line 2:
+ORA-12899: value too large for column "QYOUNG"."SCED"."SERVICEID" (actual: 4, 
+maximum: 1) 
+
+
+('dsg1','a12','w')
+ *
+ERROR at line 2:
+ORA-12899: value too large for column "QYOUNG"."SCED"."SERVICEID" (actual: 4, 
+maximum: 1) 
+
+
+('dby3','x10','f')
+ *
+ERROR at line 2:
+ORA-12899: value too large for column "QYOUNG"."SCED"."SERVICEID" (actual: 4, 
+maximum: 1) 
+
+
+('dg5','c1','r')
+ *
+ERROR at line 2:
+ORA-12899: value too large for column "QYOUNG"."SCED"."SERVICEID" (actual: 3, 
+maximum: 1) 
+
+
+('dg5','c1','t')
+ *
+ERROR at line 2:
+ORA-12899: value too large for column "QYOUNG"."SCED"."SERVICEID" (actual: 3, 
+maximum: 1) 
+
+
+('dg5','c32','t')
+ *
+ERROR at line 2:
+ORA-12899: value too large for column "QYOUNG"."SCED"."SERVICEID" (actual: 3, 
+maximum: 1) 
+
+
+SQL> select *from sced
+  2  ;
+
+no rows selected
+
+SQL> SELECT * FROM sced;
+
+no rows selected
+
+SQL> SELECT * FROM delser;
+
+SERVICEID  ITEM            LOCATION        SERVICEFEE                           
+---------- --------------- --------------- ----------                           
+dsg1       grocery         SJ                      25                           
+dsb1       books           SJ                      10                           
+dsm2       movies          LA                      10                           
+dby3       babygoods       SFO                     15                           
+dsg2       grocery         SFO                     20                           
+dg5        greengoods      SFO                     30                           
+
+6 rows selected.
+
+SQL> insert into sced Values('dsg2','c1','s');
+insert into sced Values('dsg2','c1','s')
+                        *
+ERROR at line 1:
+ORA-12899: value too large for column "QYOUNG"."SCED"."SERVICEID" (actual: 4, 
+maximum: 1) 
+
+
+SQL> SELECT * FROM cust
+  2  ;l
+  3  ;
+;l
+*
+ERROR at line 2:
+ORA-00911: invalid character 
+
+
+SQL> select *from cust;
+
+CUSTI FIRSTNAME  LASTNAME        CITY                                           
+----- ---------- --------------- ----------                                     
+c1    John       Smith           SJ                                             
+c2    Mary       Jones           SFO                                            
+a1    Vincent    Chen            SJ                                             
+a12   Greg       King            SJ                                             
+c7    James      Bond            LA                                             
+x10   Susan      Blogg           SFO                                            
+
+6 rows selected.
+
+SQL> select * from delser
+  2  ;
+
+SERVICEID  ITEM            LOCATION        SERVICEFEE                           
+---------- --------------- --------------- ----------                           
+dsg1       grocery         SJ                      25                           
+dsb1       books           SJ                      10                           
+dsm2       movies          LA                      10                           
+dby3       babygoods       SFO                     15                           
+dsg2       grocery         SFO                     20                           
+dg5        greengoods      SFO                     30                           
+
+6 rows selected.
+
+SQL> select * from sced;
+
+no rows selected
+
+SQL> select custid,firstname||lastname "fullname, city from cust;
+ERROR:
+ORA-01740: missing double quote in identifier 
+
+
+SQL> select custid,firstname||lastname "fullname", city;
+select custid,firstname||lastname "fullname", city
+                                                 *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select custid,firstname||lastname fullname,city from cust;
+
+CUSTI FULLNAME                  CITY                                            
+----- ------------------------- ----------                                      
+c1    John      Smith           SJ                                              
+c2    Mary      Jones           SFO                                             
+a1    Vincent   Chen            SJ                                              
+a12   Greg      King            SJ                                              
+c7    James     Bond            LA                                              
+x10   Susan     Blogg           SFO                                             
+
+6 rows selected.
+
+SQL> create table sched(
+  2  serviceid char(10) not null,
+  3  custid char(5) not null,
+  4  day char(2) not null,
+  5  check (day in('m','t','w','r','f')),
+  6  foreign key(serviceid) references delser(serviceid),
+  7  foreign key(custid) references cust(custid)
+  8  );
+
+Table created.
+
+SQL> start ins.sql
+insert into shced(serviceid,custid,day) values
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into shced(serviceid,custid,day) values
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into shced(serviceid,custid,day) values
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into shced(serviceid,custid,day) values
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into shced(serviceid,custid,day) values
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into shced(serviceid,custid,day) values
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> 
+SQL> start ins.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+insert into sched(serviceid,custid,day) values
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (QYOUNG.SYS_C00962953) violated - parent key 
+not found 
+
+
+SQL> insert into sched values('dg5','c32','t');
+insert into sched values('dg5','c32','t')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (QYOUNG.SYS_C00962953) violated - parent key 
+not found 
+
+
+SQL> insert into sched values('dsg2','c1','s');
+insert into sched values('dsg2','c1','s')
+*
+ERROR at line 1:
+ORA-02290: check constraint (QYOUNG.SYS_C00962951) violated 
+
+
+SQL> select * from cust order by lastname asc
+  2  ;
+
+CUSTI FIRSTNAME  LASTNAME        CITY                                           
+----- ---------- --------------- ----------                                     
+x10   Susan      Blogg           SFO                                            
+c7    James      Bond            LA                                             
+a1    Vincent    Chen            SJ                                             
+c2    Mary       Jones           SFO                                            
+a12   Greg       King            SJ                                             
+c1    John       Smith           SJ                                             
+
+6 rows selected.
+
+SQL> select * from sched order by serviceid desc, custid desc;
+
+SERVICEID  CUSTI DA                                                             
+---------- ----- --                                                             
+dsg1       c1    m                                                              
+dsg1       a12   w                                                              
+dg5        c1    t                                                              
+dg5        c1    r                                                              
+dby3       x10   f                                                              
+
+SQL> select serviceid from delser
+  2  minus
+  3  select serviceid from sched;
+
+SERVICEID                                                                       
+----------                                                                      
+dsb1                                                                            
+dsg2                                                                            
+dsm2                                                                            
+
+SQL> select firstname from cust inner join sched on day where day = 'm';
+select firstname from cust inner join sched on day where day = 'm'
+                                                   *
+ERROR at line 1:
+ORA-00920: invalid relational operator 
+
+
+SQL> select firstname from cust inner join sched on cust.custid = sched.custid where sched.day='m';
+
+FIRSTNAME                                                                       
+----------                                                                      
+John                                                                            
+
+SQL> select lastname from cust inner join sched on cust.custid = sched.custid where sched.serviceid = delser.serviceid
+  2  ;
+select lastname from cust inner join sched on cust.custid = sched.custid where sched.serviceid = delser.serviceid
+                                                                                                 *
+ERROR at line 1:
+ORA-00904: "DELSER"."SERVICEID": invalid identifier 
+
+
+SQL> select lastname from cust inner join sched on cust.custid = sched.custid where cust.custid = sched.custid;
+
+LASTNAME                                                                        
+---------------                                                                 
+Smith                                                                           
+Smith                                                                           
+Smith                                                                           
+King                                                                            
+Blogg                                                                           
+
+SQL> select *from cust
+  2  ;
+
+CUSTI FIRSTNAME  LASTNAME        CITY                                           
+----- ---------- --------------- ----------                                     
+c1    John       Smith           SJ                                             
+c2    Mary       Jones           SFO                                            
+a1    Vincent    Chen            SJ                                             
+a12   Greg       King            SJ                                             
+c7    James      Bond            LA                                             
+x10   Susan      Blogg           SFO                                            
+
+6 rows selected.
+
+SQL> select max(servicefee) from delser
+  2  ;
+
+MAX(SERVICEFEE)                                                                 
+---------------                                                                 
+             30                                                                 
+
+SQL> select count('m') from sched;
+
+COUNT('M')                                                                      
+----------                                                                      
+         5                                                                      
+
+SQL> select count('t') from sched;
+
+COUNT('T')                                                                      
+----------                                                                      
+         5                                                                      
+
+SQL> select count(day) from sched where day ='m';
+
+COUNT(DAY)                                                                      
+----------                                                                      
+         1                                                                      
+
+SQL> select count day from sched where day='t';
+select count day from sched where day='t'
+       *
+ERROR at line 1:
+ORA-00904: "COUNT": invalid identifier 
+
+
+SQL> select count(day) from sched where day = 't';
+
+COUNT(DAY)                                                                      
+----------                                                                      
+         1                                                                      
+
+SQL> select count(day) from sched where day = 'w';
+
+COUNT(DAY)                                                                      
+----------                                                                      
+         1                                                                      
+
+SQL> select count(day) from sched where day = 'r';
+
+COUNT(DAY)                                                                      
+----------                                                                      
+         1                                                                      
+
+SQL> select count(day) from sched where day = 'f';
+
+COUNT(DAY)                                                                      
+----------                                                                      
+         1                                                                      
+
+SQL> select custid, custid, city from cust where cust.city = cust.city;
+
+CUSTI CUSTI CITY                                                                
+----- ----- ----------                                                          
+c1    c1    SJ                                                                  
+c2    c2    SFO                                                                 
+a1    a1    SJ                                                                  
+a12   a12   SJ                                                                  
+c7    c7    LA                                                                  
+x10   x10   SFO                                                                 
+
+6 rows selected.
+
+SQL> select cust.custid, cust.custid, cust.city from cust where cust.city = cust.city;
+
+CUSTI CUSTI CITY                                                                
+----- ----- ----------                                                          
+c1    c1    SJ                                                                  
+c2    c2    SFO                                                                 
+a1    a1    SJ                                                                  
+a12   a12   SJ                                                                  
+c7    c7    LA                                                                  
+x10   x10   SFO                                                                 
+
+6 rows selected.
+
+SQL> select A.custid as cust1, B.custid as cust2, a.city from cust a, cust b where a.city = b.city;
+
+CUST1 CUST2 CITY                                                                
+----- ----- ----------                                                          
+a12   c1    SJ                                                                  
+a1    c1    SJ                                                                  
+c1    c1    SJ                                                                  
+x10   c2    SFO                                                                 
+c2    c2    SFO                                                                 
+a12   a1    SJ                                                                  
+a1    a1    SJ                                                                  
+c1    a1    SJ                                                                  
+a12   a12   SJ                                                                  
+a1    a12   SJ                                                                  
+c1    a12   SJ                                                                  
+
+CUST1 CUST2 CITY                                                                
+----- ----- ----------                                                          
+c7    c7    LA                                                                  
+x10   x10   SFO                                                                 
+c2    x10   SFO                                                                 
+
+14 rows selected.
+
+SQL> select firstname from cust inner join delser on cust.city = delser.city;
+select firstname from cust inner join delser on cust.city = delser.city
+                                                            *
+ERROR at line 1:
+ORA-00904: "DELSER"."CITY": invalid identifier 
+
+
+SQL> select firstname from cust inner join delser on cust.city = delser.location;
+
+FIRSTNAME                                                                       
+----------                                                                      
+Greg                                                                            
+Vincent                                                                         
+John                                                                            
+Greg                                                                            
+Vincent                                                                         
+John                                                                            
+James                                                                           
+Susan                                                                           
+Mary                                                                            
+Susan                                                                           
+Mary                                                                            
+
+FIRSTNAME                                                                       
+----------                                                                      
+Susan                                                                           
+Mary                                                                            
+
+13 rows selected.
+
+SQL> select A.custid as ctid<b.custid;
+select A.custid as ctid<b.custid
+                       *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select A.custid as cust1, B.custid as cust2, a.city from cust a, cust b where a.city = b.city and a.custid < b.custid;
+
+CUST1 CUST2 CITY                                                                
+----- ----- ----------                                                          
+a12   c1    SJ                                                                  
+a1    c1    SJ                                                                  
+a1    a12   SJ                                                                  
+c2    x10   SFO                                                                 
+
+SQL> spool off
