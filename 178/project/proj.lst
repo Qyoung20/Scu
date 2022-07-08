@@ -1,0 +1,1106 @@
+SP2-0310: unable to open file "/home/qyoung/Desktop/178/project/tabels.sql"
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE ADDITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+16/27    PLS-00103: Encountered the symbol "THEN" when expecting one of         
+         the following:                                                         
+         := . ( % ;                                                             
+                                                                                
+18/6     PLS-00103: Encountered the symbol "IF" when expecting one of the       
+         following:                                                             
+         ; <an identifier> <a double-quoted delimited-identifier>               
+         current delete exists prior <a single-quoted SQL string>               
+                                                                                
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SETSHIPPINGDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+0/0      PL/SQL: Compilation unit analysis terminated                           
+1/35     PLS-00201: identifier 'ITEMORDER.ORDERID' must be declared             
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SHOWITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+25/20    PLS-00103: Encountered the symbol "SELECE" when expecting one of       
+         the following:                                                         
+         ( select <a SQL statement>                                             
+         The symbol "select" was substituted for "SELECE" to continue.          
+                                                                                
+25/116   PLS-00103: Encountered the symbol "ITEMORDER" when expecting one       
+         of the following:                                                      
+         ( select                                                               
+                                                                                
+after update on custom
+                *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+Errors for PROCEDURE SHOWITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+25/20    PLS-00103: Encountered the symbol "SELECE" when expecting one of       
+         the following:                                                         
+         ( select <a SQL statement>                                             
+         The symbol "select" was substituted for "SELECE" to continue.          
+                                                                                
+25/116   PLS-00103: Encountered the symbol "ITEMORDER" when expecting one       
+         of the following:                                                      
+         ( select                                                               
+                                                                                
+insert into custom values ('g', '12', 'Quinton Young', '4084586986', '123 proj ln', '29-MAY-22')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into custom values ('g', '23', 'jace christ', '1234567890', '223 proj ln', '29-MAY-22')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into custom values ('g', '34', 'stinky berges', '2222222222', '323 proj ln', '29-MAY-22')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into custom values ('r', '45', 'mike jason', '3333333333', '133 proj ln', '29-MAY-22')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into custom values ('r', '56', 'veronica willson', '4444444444', '233 proj ln', '29-MAY-22')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into custom values ('r', '78', 'juicy chickentenders', '5555555555', '333 proj ln', '29-MAY-22')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into storeitem values ('1', 50.00)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into comicbook values ('1987360989743', 'Shrek', '22-APR-01', '10', '1')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into storeitem values ('2', 50.00)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into comicbook values ('1987360989744', 'Shrek2', '19-MAY-04', '10', '2')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into storeitem values ('3', 50.00)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into comicbook values ('1987360989745', 'Shrek3', '18-MAY-07', '10', '3')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into storeitem values('4', 15.00)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into tshirt values('s', '4')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into storeitem values('5', 20.00)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into tshirt values('m', '5')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into storeitem values('6', 25.00)
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+insert into tshirt values('l', '6')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+BEGIN additemorder ('1', '1', '12', '04-JUN-22', null, 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('2', '1', '23', '04-JUN-22', null, 12); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('3', '4', '45', '04-JUN-22', null, 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('4', '6', '78', '04-JUN-22', null, 5); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+select * from itemorder
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+select * from comicbook
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+BEGIN setshippingdate ('1', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SETSHIPPINGDATE is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('2', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SETSHIPPINGDATE is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('3', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SETSHIPPINGDATE is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('4', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SETSHIPPINGDATE is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+select * from itemorder
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+select computetotal('1') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+update custom set ctype = 'r', joindate = '05-JUN-22', where custid = '12'
+                                                       *
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification 
+
+
+select computetotal('1') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('2') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('3') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('4') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+update custom set ctype = 'g', joindate = '05-JUN-22', where custid = '78'
+                                                       *
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification 
+
+
+select computetotal('4') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select * from itemorder
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+BEGIN showitemorder ('12', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SHOWITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN showitemorder ('45', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SHOWITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+SQL> start tables.sql
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+SQL> start query.sql
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE ADDITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+16/27    PLS-00103: Encountered the symbol "THEN" when expecting one of         
+         the following:                                                         
+         := . ( % ;                                                             
+                                                                                
+18/6     PLS-00103: Encountered the symbol "IF" when expecting one of the       
+         following:                                                             
+         ; <an identifier> <a double-quoted delimited-identifier>               
+         current delete exists prior <a single-quoted SQL string>               
+                                                                                
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SETSHIPPINGDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+7/2      PL/SQL: Statement ignored                                              
+7/6      PLS-00201: identifier 'ADD_ORDERDATE' must be declared                 
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SHOWITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+25/20    PLS-00103: Encountered the symbol "SELECE" when expecting one of       
+         the following:                                                         
+         ( select <a SQL statement>                                             
+         The symbol "select" was substituted for "SELECE" to continue.          
+                                                                                
+25/116   PLS-00103: Encountered the symbol "ITEMORDER" when expecting one       
+         of the following:                                                      
+         ( select                                                               
+                                                                                
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER CTYPEUPDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+4/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+6/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+SQL> start Input.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> exec additemorder ('1', '1', '12', '04-JUN-22', null, 3);
+BEGIN additemorder ('1', '1', '12', '04-JUN-22', null, 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+SQL> select * from itemorder;
+
+no rows selected
+
+SQL> start query.sql
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE ADDITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+15/3     PLS-00103: Encountered the symbol "ADD_SHIPPINGFEE" when               
+         expecting one of the following:                                        
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "ADD_SHIPPINGFEE" to             
+         continue.                                                              
+                                                                                
+17/3     PLS-00103: Encountered the symbol "ADD_SHIPPINGFEE" when               
+         expecting one of the following:                                        
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+         := . ( % ;                                                             
+         The symbol "." was substituted for "ADD_SHIPPINGFEE" to continue.      
+                                                                                
+                                                                                
+22/3     PLS-00103: Encountered the symbol "INSERT" when expecting one of       
+         the following:                                                         
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "INSERT" to continue.            
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+                                                                                
+38/3     PLS-00103: Encountered the symbol "ADD_SHIPPINGFEE" when               
+         expecting one of the following:                                        
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "ADD_SHIPPINGFEE" to             
+         continue.                                                              
+                                                                                
+40/3     PLS-00103: Encountered the symbol "ADD_SHIPPINGFEE" when               
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+         expecting one of the following:                                        
+         := . ( % ;                                                             
+         The symbol "." was substituted for "ADD_SHIPPINGFEE" to continue.      
+                                                                                
+                                                                                
+46/1     PLS-00103: Encountered the symbol "\"                                  
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SETSHIPPINGDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+7/2      PL/SQL: Statement ignored                                              
+7/6      PLS-00201: identifier 'ADD_ORDERDATE' must be declared                 
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SHOWITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+25/20    PLS-00103: Encountered the symbol "SELECE" when expecting one of       
+         the following:                                                         
+         ( select <a SQL statement>                                             
+         The symbol "select" was substituted for "SELECE" to continue.          
+                                                                                
+25/116   PLS-00103: Encountered the symbol "ITEMORDER" when expecting one       
+         of the following:                                                      
+         ( select                                                               
+                                                                                
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER CTYPEUPDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+4/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+6/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+SQL> start query.sql
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE ADDITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+15/3     PLS-00103: Encountered the symbol "T_SHIPPINGFEE" when expecting       
+         one of the following:                                                  
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "T_SHIPPINGFEE" to               
+         continue.                                                              
+                                                                                
+17/3     PLS-00103: Encountered the symbol "T_SHIPPINGFEE" when expecting       
+         one of the following:                                                  
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+         := . ( % ;                                                             
+         The symbol "." was substituted for "T_SHIPPINGFEE" to continue.        
+                                                                                
+22/3     PLS-00103: Encountered the symbol "INSERT" when expecting one of       
+         the following:                                                         
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "INSERT" to continue.            
+                                                                                
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+38/3     PLS-00103: Encountered the symbol "T_SHIPPINGFEE" when expecting       
+         one of the following:                                                  
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "T_SHIPPINGFEE" to               
+         continue.                                                              
+                                                                                
+40/3     PLS-00103: Encountered the symbol "T_SHIPPINGFEE" when expecting       
+         one of the following:                                                  
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+         := . ( % ;                                                             
+         The symbol "." was substituted for "T_SHIPPINGFEE" to continue.        
+                                                                                
+46/1     PLS-00103: Encountered the symbol "\"                                  
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SETSHIPPINGDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+7/2      PL/SQL: Statement ignored                                              
+7/6      PLS-00201: identifier 'ADD_ORDERDATE' must be declared                 
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SHOWITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+25/20    PLS-00103: Encountered the symbol "SELECE" when expecting one of       
+         the following:                                                         
+         ( select <a SQL statement>                                             
+         The symbol "select" was substituted for "SELECE" to continue.          
+                                                                                
+25/116   PLS-00103: Encountered the symbol "ITEMORDER" when expecting one       
+         of the following:                                                      
+         ( select                                                               
+                                                                                
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER CTYPEUPDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+4/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+6/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+SQL> start query.sql
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE ADDITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+15/3     PLS-00103: Encountered the symbol "L_SHIPPINGFEE" when expecting       
+         one of the following:                                                  
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "L_SHIPPINGFEE" to               
+         continue.                                                              
+                                                                                
+17/3     PLS-00103: Encountered the symbol "L_SHIPPINGFEE" when expecting       
+         one of the following:                                                  
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+         := . ( % ;                                                             
+         The symbol "." was substituted for "L_SHIPPINGFEE" to continue.        
+                                                                                
+22/3     PLS-00103: Encountered the symbol "INSERT" when expecting one of       
+         the following:                                                         
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "INSERT" to continue.            
+                                                                                
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+38/3     PLS-00103: Encountered the symbol "L_SHIPPINGFEE" when expecting       
+         one of the following:                                                  
+         * & = - + < / > at in is mod remainder not rem then                    
+         <an exponent (**)> <> or != or ~= >= <= <> and or like like2           
+         like4 likec between overlaps || multiset year day member               
+         submultiset                                                            
+         The symbol "then" was substituted for "L_SHIPPINGFEE" to               
+         continue.                                                              
+                                                                                
+40/3     PLS-00103: Encountered the symbol "L_SHIPPINGFEE" when expecting       
+         one of the following:                                                  
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+         := . ( % ;                                                             
+         The symbol "." was substituted for "L_SHIPPINGFEE" to continue.        
+                                                                                
+46/1     PLS-00103: Encountered the symbol "\"                                  
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SETSHIPPINGDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+7/2      PL/SQL: Statement ignored                                              
+7/6      PLS-00201: identifier 'ADD_ORDERDATE' must be declared                 
+
+Warning: Procedure created with compilation errors.
+
+Errors for PROCEDURE SHOWITEMORDER:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+25/20    PLS-00103: Encountered the symbol "SELECE" when expecting one of       
+         the following:                                                         
+         ( select <a SQL statement>                                             
+         The symbol "select" was substituted for "SELECE" to continue.          
+                                                                                
+25/116   PLS-00103: Encountered the symbol "ITEMORDER" when expecting one       
+         of the following:                                                      
+         ( select                                                               
+                                                                                
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER CTYPEUPDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+4/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+6/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+SQL> start additemorder.sqlstart additemorder.sql
+SP2-0310: unable to open file "additemorder.sqlstart"
+SQL> start additemorders.sql
+ 57  
+ 58  
+ 59  
+ 60  
+ 61  
+ 62  
+ 63  
+ 64  
+ 65  
+ 66  
+ 67  
+ 68  
+ 69  
+ 70  
+ 71  
+ 72  
+ 73  
+ 74  
+ 75  
+ 76  
+ 77  
+ 78  
+ 79  
+ 80  
+ 81  
+ 82  
+ 83  
+ 84  
+ 85  
+ 86  
+ 87  
+ 88  
+ 89  
+ 90  
+ 91  
+ 92  
+ 93  
+ 94  
+ 95  
+ 96  
+ 97  
+ 98  
+ 99  
+100  
+101  
+102  
+103  
+104  
+105  
+106  
+107  
+108  
+109  
+110  
+111  
+112  
+113  
+114  
+115  
+116  
+117  
+118  
+119  
+120  
+121  
+122  
+123  
+SQL> exec additemorder ('1', '1', '12', '04-JUN-22', null, 3);
+BEGIN additemorder ('1', '1', '12', '04-JUN-22', null, 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+SQL> start execute.sql
+BEGIN additemorder ('1', '1', '12', '04-JUN-22', null, 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('2', '1', '23', '04-JUN-22', null, 12); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('3', '4', '45', '04-JUN-22', null, 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('4', '6', '78', '04-JUN-22', null, 5); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.ADDITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+
+no rows selected
+
+
+ISBN          TITLE                PUBLISHDA     COPIES ITEMID                  
+------------- -------------------- --------- ---------- --------------          
+1987360989743 Shrek                22-APR-01         10 1                       
+1987360989744 Shrek2               19-MAY-04         10 2                       
+1987360989745 Shrek3               18-MAY-07         10 3                       
+
+BEGIN setshippingdate ('1', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SETSHIPPINGDATE is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('2', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SETSHIPPINGDATE is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('3', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SETSHIPPINGDATE is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('4', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SETSHIPPINGDATE is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+
+no rows selected
+
+select computetotal('1') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+update custom set ctype = 'r', joindate = '05-JUN-22', where custid = '12'
+                                                       *
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification 
+
+
+select computetotal('1') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('2') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('3') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('4') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+update custom set ctype = 'g', joindate = '05-JUN-22', where custid = '78'
+                                                       *
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification 
+
+
+select computetotal('4') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select * from itemorder
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+BEGIN showitemorder ('12', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SHOWITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN showitemorder ('45', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00905: object QYOUNG.SHOWITEMORDER is invalid 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+SQL> create or replace procedure additemorder (oid in itemorder.orderid%type, iid in itemorder.orderid%type, cid in custom.custid%type, odate in itemorder.orderdate%type, sdate in itemorder.shipdate%type, noitems in intemorder.noOfitems%type)
+  2  is
+  3  	l_ctype custom.ctype%type;
+  4  	l_copies comicbook.copies%type;
+  5  	l_shippingfee itemorder.shippingfee%type;
+  6  	nobook exception;
+  7  
+  8  BEGIN
+  9  
+ 10  	--put data in
+ 11  	select copies into l_copies from comicbook where itemid = iid;
+ 12  	select ctype into l_ctype from customer where custid = cid;
+ 13  	--check and update ship fee for cust type
+ 14  	if (l_ctype = 'r') then
+ 15  		add_shippingfee := 10.00;
+ 16  	elseif (add_ctype = 'g') then
+ 17  		l_shippingfee := 00.00;
+ 18  	end if;
+ 19  
+ 20  --check num of books
+ 21  	if (add_copies >= noitems) then
+ 22  		insert into itemorder (orderid, custid, itemid, orderdate, noOfitems, shipdate, shippingfee)
+ 23  			values (oid, cid, iid, odate, noitemsm, null, add_shippingfee);
+ 24  		update comicbook set copies = l_copies - noitems where itemid = iid;
+ 25  	else
+ 26  		raise nobook;
+ 27  	end if;
+ 28  
+ 29  EXCEPTION
+ 30  	when nobook then dbms_output.put_line('No more of this book in stock');
+ 31  	when no_data_found then
+ 32  	declare
+ 33  		l_ctype custom.ctype%type;
+ 34  		l_shippingdfee itemorder.shippingfee%type;
+ 35  	begin
+ 36  	select ctype into add_ctype from custom where custid = cid;
+ 37  	if (l_ctype = 'r') then
+ 38  		l_shippingfee := 10.00;
+ 39  	elseif (l_ctype = 'g') then
+ 40  		l_shippingfee := 00.00;
+ 41  		end if;
+ 42  			insert into itemorder (orderid, custid, itemid, orderdate, noOfitems, shipdate, shippingfee)
+ 43  			values (oid, cid, iid, odate, noitemsm, null, add_shippingfee);
+ 44  	end;
+ 45  end;
+ 46  \
+ 47  show errors;
+ 48  
+ 49  
+ 50  
+ 51  
+ 52  
+ 53  
+ 54  
+ 55  
+ 56  
+ 57  ;
+ 58  
+SQL> create or replace procedure additemorder (oid in itemorder.orderid%type, iid in itemorder.orderid%type, cid in custom.custid%type, odate in itemorder.orderdate%type, sdate in itemorder.shipdate%type, noitems in intemorder.noOfitems%type)
+  2  is
+  3  	l_ctype custom.ctype%type;
+  4  	l_copies comicbook.copies%type;
+  5  	l_shippingfee itemorder.shippingfee%type;
+  6  	nobook exception;
+  7  
+  8  BEGIN
+  9  
+ 10  	--put data in
+ 11  	select copies into l_copies from comicbook where itemid = iid;
+ 12  	select ctype into l_ctype from customer where custid = cid;
+ 13  	--check and update ship fee for cust type
+ 14  	if (l_ctype = 'r') then
+ 15  		add_shippingfee := 10.00;
+ 16  	elseif (add_ctype = 'g') then
+ 17  		l_shippingfee := 00.00;
+ 18  	end if;
+ 19  
+ 20  --check num of books
+ 21  	if (add_copies >= noitems) then
+ 22  		insert into itemorder (orderid, custid, itemid, orderdate, noOfitems, shipdate, shippingfee)
+ 23  			values (oid, cid, iid, odate, noitemsm, null, add_shippingfee);
+ 24  		update comicbook set copies = l_copies - noitems where itemid = iid;
+ 25  	else
+ 26  		raise nobook;
+ 27  	end if;
+ 28  
+ 29  EXCEPTION
+ 30  	when nobook then dbms_output.put_line('No more of this book in stock');
+ 31  	when no_data_found then
+ 32  	declare
+ 33  		l_ctype custom.ctype%type;
+ 34  		l_shippingdfee itemorder.shippingfee%type;
+ 35  	begin
+ 36  	select ctype into add_ctype from custom where custid = cid;
+ 37  	if (l_ctype = 'r') then
+ 38  		l_shippingfee := 10.00;
+ 39  	elseif (l_ctype = 'g') then
+ 40  		l_shippingfee := 00.00;
+ 41  		end if;
+ 42  			insert into itemorder (orderid, custid, itemid, orderdate, noOfitems, shipdate, shippingfee)
+ 43  			values (oid, cid, iid, odate, noitemsm, null, add_shippingfee);
+ 44  	end;
+ 45  end;
+ 46  \
+ 47  show errors;
+ 48  ;
+ 49  ;
+ 50  ;
+ 51  ;
+ 52  ;
+ 53  ;
+ 54  
+SQL> quit

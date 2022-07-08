@@ -1,0 +1,869 @@
+SQL> spool
+currently spooling to deliv.lst
+SQL> start itemorder.sql
+orderid varchar primary key,
+                *
+ERROR at line 2:
+ORA-00906: missing left parenthesis 
+
+
+SQL> start tshirt.sql
+)
+*
+ERROR at line 4:
+ORA-00904: : invalid identifier 
+
+
+SQL> start tshirt.sql
+itemid varchar(2) primary key references storeitem(itemid)
+                                         *
+ERROR at line 3:
+ORA-00942: table or view does not exist 
+
+
+SQL> start storeitems.sql
+
+Table created.
+
+SQL> start tshirt.sql
+
+Table created.
+
+SQL> start comicbook.sql
+title varchar,
+             *
+ERROR at line 3:
+ORA-00906: missing left parenthesis 
+
+
+SQL> start comicbook.sql
+
+Table created.
+
+SQL> start itemorder.sql
+orderid varchar primary key,
+                *
+ERROR at line 2:
+ORA-00906: missing left parenthesis 
+
+
+SQL> start customer.sql
+phone int (10) not null unique,
+          *
+ERROR at line 5:
+ORA-00907: missing right parenthesis 
+
+
+SQL> start customer.sql
+constraint type_ck check(type = 'r' or 'g')
+                                          *
+ERROR at line 8:
+ORA-00920: invalid relational operator 
+
+
+SQL> start customer.sql
+constraint type_ck check(ctype = 'r' or 'g')
+                                           *
+ERROR at line 8:
+ORA-00920: invalid relational operator 
+
+
+SQL> start customer.sql
+constraint type_ck check (ctype = 'r' or 'g')
+                                            *
+ERROR at line 8:
+ORA-00920: invalid relational operator 
+
+
+SQL> start customer.sql
+create table cust(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> start customer.sql
+create table customer(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> ORA-00955: name is already used by an existing object
+SP2-0734: unknown command beginning "ORA-00955:..." - rest of line ignored.
+SQL> 
+SQL> start customer.sql
+create table customer(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+SQL> start customer.sql
+
+Table created.
+
+SQL> start itemorder.sql
+orderid varchar primary key,
+                *
+ERROR at line 2:
+ORA-00906: missing left parenthesis 
+
+
+SQL> start itemorder.sql
+custid varchar references custom(custid),
+               *
+ERROR at line 3:
+ORA-00906: missing left parenthesis 
+
+
+SQL> start itemorder.sql
+
+Table created.
+
+SQL> start input.sql
+SP2-0310: unable to open file "input.sql"
+SQL> start Input.sql
+insert into custom values ('g', '321', 'Quinton Young', '4084586986', '123 proj ln', '29-MAY-22')
+                                *
+ERROR at line 1:
+ORA-12899: value too large for column "QYOUNG"."CUSTOM"."CUSTID" (actual: 3, 
+maximum: 2) 
+
+
+insert into custom values ('g', '322', 'jace christ', '1234567890', '223 proj ln', '29-MAY-22')
+                                *
+ERROR at line 1:
+ORA-12899: value too large for column "QYOUNG"."CUSTOM"."CUSTID" (actual: 3, 
+maximum: 2) 
+
+
+insert into custom values ('g', '323', 'stinky berges', '2222222222', '323 proj ln', '29-MAY-22')
+                                *
+ERROR at line 1:
+ORA-12899: value too large for column "QYOUNG"."CUSTOM"."CUSTID" (actual: 3, 
+maximum: 2) 
+
+
+insert into custom values ('r', '331', 'mike jason', '3333333333', '133 proj ln', '29-MAY-22')
+                                *
+ERROR at line 1:
+ORA-12899: value too large for column "QYOUNG"."CUSTOM"."CUSTID" (actual: 3, 
+maximum: 2) 
+
+
+insert into custom values ('r', '332', 'veronica willson', '4444444444', '233 proj ln', '29-MAY-22')
+                                *
+ERROR at line 1:
+ORA-12899: value too large for column "QYOUNG"."CUSTOM"."CUSTID" (actual: 3, 
+maximum: 2) 
+
+
+insert into custom values ('r', '333', 'juicy chickentenders', '5555555555', '333 proj ln', '29-MAY-22')
+                                *
+ERROR at line 1:
+ORA-12899: value too large for column "QYOUNG"."CUSTOM"."CUSTID" (actual: 3, 
+maximum: 2) 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> start test.sql
+
+no rows selected
+
+
+ITEMID              PRICE                                                       
+-------------- ----------                                                       
+1                      50                                                       
+2                      50                                                       
+3                      50                                                       
+4                      15                                                       
+5                      20                                                       
+6                      25                                                       
+
+6 rows selected.
+
+
+ISBN          TITLE                PUBLISHDA     COPIES ITEMID                  
+------------- -------------------- --------- ---------- --------------          
+1987360989743 Shrek                22-APR-01         10 1                       
+1987360989744 Shrek2               19-MAY-04         10 2                       
+1987360989745 Shrek3               18-MAY-07         10 3                       
+
+
+S IT                                                                            
+- --                                                                            
+s 4                                                                             
+m 5                                                                             
+l 6                                                                             
+
+
+no rows selected
+
+SQL> start test.sql
+
+no rows selected
+
+
+ITEMID              PRICE                                                       
+-------------- ----------                                                       
+1                      50                                                       
+2                      50                                                       
+3                      50                                                       
+4                      15                                                       
+5                      20                                                       
+6                      25                                                       
+
+6 rows selected.
+
+
+ISBN          TITLE                PUBLISHDA     COPIES ITEMID                  
+------------- -------------------- --------- ---------- --------------          
+1987360989743 Shrek                22-APR-01         10 1                       
+1987360989744 Shrek2               19-MAY-04         10 2                       
+1987360989745 Shrek3               18-MAY-07         10 3                       
+
+
+S IT                                                                            
+- --                                                                            
+s 4                                                                             
+m 5                                                                             
+l 6                                                                             
+
+
+no rows selected
+
+SQL> start Input.sql
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+insert into storeitem values ('1', 50.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into comicbook values ('1987360989743', 'Shrek', '22-APR-01', '10', '1')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973653) violated 
+
+
+insert into storeitem values ('2', 50.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into comicbook values ('1987360989744', 'Shrek2', '19-MAY-04', '10', '2')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973653) violated 
+
+
+insert into storeitem values ('3', 50.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into comicbook values ('1987360989745', 'Shrek3', '18-MAY-07', '10', '3')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973653) violated 
+
+
+insert into storeitem values('4', 15.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into tshirt values('s', '4')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973649) violated 
+
+
+insert into storeitem values('5', 20.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into tshirt values('m', '5')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973649) violated 
+
+
+insert into storeitem values('6', 25.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into tshirt values('l', '6')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973649) violated 
+
+
+SQL> start Input.sql
+insert into custom values ('g', '12', 'Quinton Young', '4084586986', '123 proj ln', '29-MAY-22')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973658) violated 
+
+
+insert into custom values ('g', '23', 'jace christ', '1234567890', '223 proj ln', '29-MAY-22')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973658) violated 
+
+
+insert into custom values ('g', '34', 'stinky berges', '2222222222', '323 proj ln', '29-MAY-22')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973658) violated 
+
+
+insert into custom values ('r', '45', 'mike jason', '3333333333', '133 proj ln', '29-MAY-22')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973658) violated 
+
+
+insert into custom values ('r', '56', 'veronica willson', '4444444444', '233 proj ln', '29-MAY-22')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973658) violated 
+
+
+insert into custom values ('r', '78', 'juicy chickentenders', '5555555555', '333 proj ln', '29-MAY-22')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973658) violated 
+
+
+insert into custom values ('r', '78', 'juicy chickentenders', '5555555555', '333 proj ln', '29-MAY-22')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973658) violated 
+
+
+insert into comicbook values ('1987360989743', 'Shrek', '22-APR-01', '10', '1')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973653) violated 
+
+
+insert into storeitem values ('2', 50.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into comicbook values ('1987360989744', 'Shrek2', '19-MAY-04', '10', '2')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973653) violated 
+
+
+insert into storeitem values ('3', 50.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into comicbook values ('1987360989745', 'Shrek3', '18-MAY-07', '10', '3')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973653) violated 
+
+
+insert into storeitem values('4', 15.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into tshirt values('s', '4')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973649) violated 
+
+
+insert into storeitem values('5', 20.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+insert into tshirt values('m', '5')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973649) violated 
+
+
+insert into storeitem values('6', 25.00)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (QYOUNG.SYS_C00973648) violated 
+
+
+  2  
+SQL> start additemorder.sql
+ 57  ;
+ 58  
+ 59  
+SQL> start trigger.sql
+
+Warning: Trigger created with compilation errors.
+
+Errors for TRIGGER CTYPEUPDATE:
+
+LINE/COL ERROR                                                                  
+-------- -----------------------------------------------------------------      
+4/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+6/59     PLS-00049: bad bind variable 'NEWCUSTID'                               
+SQL> start additemorders.sql
+ 57  end
+ 58  end
+ 59  
+SQL> select * from itemorder;
+
+no rows selected
+
+SQL> select * from custom;
+
+C CU NAME                                PHONE ADDRESS                          
+- -- ------------------------------ ---------- ------------------------------   
+JOINDATE                                                                        
+---------                                                                       
+g 12 Quinton Young                  4084586986 123 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+g 23 jace christ                    1234567890 223 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+g 34 stinky berges                  2222222222 323 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+
+C CU NAME                                PHONE ADDRESS                          
+- -- ------------------------------ ---------- ------------------------------   
+JOINDATE                                                                        
+---------                                                                       
+r 45 mike jason                     3333333333 133 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+r 56 veronica willson               4444444444 233 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+r 78 juicy chickentenders           5555555555 333 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+
+6 rows selected.
+
+SQL> start queries,sql
+SP2-0310: unable to open file "queries,sql.sql"
+SQL> start queries
+BEGIN additemorder ('1', '1', '12', '04-JUN-22', null, 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'ADDITEMORDER' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('2', '1', '23', '04-JUN-22', null, 12); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'ADDITEMORDER' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('3', '4', '45', '04-JUN-22', null, 3); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'ADDITEMORDER' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN additemorder ('4', '6', '78', '04-JUN-22', null, 5); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'ADDITEMORDER' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+
+no rows selected
+
+
+ISBN          TITLE                PUBLISHDA     COPIES ITEMID                  
+------------- -------------------- --------- ---------- --------------          
+1987360989743 Shrek                22-APR-01         10 1                       
+1987360989744 Shrek2               19-MAY-04         10 2                       
+1987360989745 Shrek3               18-MAY-07         10 3                       
+
+BEGIN setshippingdate ('1', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'SETSHIPPINGDATE' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('2', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'SETSHIPPINGDATE' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('3', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'SETSHIPPINGDATE' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN setshippingdate ('4', '06-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'SETSHIPPINGDATE' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+
+no rows selected
+
+select computetotal('1') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+update custom set ctype = 'r', joindate = '05-JUN-22', where custid = '12'
+                                                       *
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification 
+
+
+select computetotal('1') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('2') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('3') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select computetotal('4') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+update custom set ctype = 'g', joindate = '05-JUN-22', where custid = '78'
+                                                       *
+ERROR at line 1:
+ORA-01747: invalid user.table.column, table.column, or column specification 
+
+
+select computetotal('4') from dual
+       *
+ERROR at line 1:
+ORA-00904: "COMPUTETOTAL": invalid identifier 
+
+
+select * from itemorder
+*
+ERROR at line 2:
+ORA-00933: SQL command not properly ended 
+
+
+BEGIN showitemorder ('12', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'SHOWITEMORDER' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+BEGIN showitemorder ('45', '04-JUN-22'); END;
+
+      *
+ERROR at line 1:
+ORA-06550: line 1, column 7: 
+PLS-00201: identifier 'SHOWITEMORDER' must be declared 
+ORA-06550: line 1, column 7: 
+PL/SQL: Statement ignored 
+
+
+SQL> start queries.sql
+106  
+107  
+108  
+109  
+110  
+111  
+112  
+113  
+114  
+115  
+116  
+117  
+118  
+119  
+120  
+121  
+122  
+123  
+124  
+125  
+126  
+127  
+128  
+129  
+130  
+131  
+132  
+133  end
+134  emndasdas
+135  
+136  
+137  
+138  
+139  
+140  
+141  
+142  
+143  
+144  
+145  
+146  
+147  
+148  
+149  
+150  
+151  
+152  
+153  
+154  
+155  
+156  
+157  
+158  
+159  
+160  
+161  
+162  
+163  end
+164  stop
+165  ;
+166  ;
+167  ;
+168  ;
+169  ;
+170  ;
+171  ;
+172  ;
+173  ;stop
+174  quit
+175  
+SQL> start test.sql
+
+C CU NAME                                PHONE ADDRESS                          
+- -- ------------------------------ ---------- ------------------------------   
+JOINDATE                                                                        
+---------                                                                       
+g 12 Quinton Young                  4084586986 123 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+g 23 jace christ                    1234567890 223 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+g 34 stinky berges                  2222222222 323 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+
+C CU NAME                                PHONE ADDRESS                          
+- -- ------------------------------ ---------- ------------------------------   
+JOINDATE                                                                        
+---------                                                                       
+r 45 mike jason                     3333333333 133 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+r 56 veronica willson               4444444444 233 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+r 78 juicy chickentenders           5555555555 333 proj ln                      
+29-MAY-22                                                                       
+                                                                                
+
+6 rows selected.
+
+
+ITEMID              PRICE                                                       
+-------------- ----------                                                       
+1                      50                                                       
+2                      50                                                       
+3                      50                                                       
+4                      15                                                       
+5                      20                                                       
+6                      25                                                       
+
+6 rows selected.
+
+
+ISBN          TITLE                PUBLISHDA     COPIES ITEMID                  
+------------- -------------------- --------- ---------- --------------          
+1987360989743 Shrek                22-APR-01         10 1                       
+1987360989744 Shrek2               19-MAY-04         10 2                       
+1987360989745 Shrek3               18-MAY-07         10 3                       
+
+
+S IT                                                                            
+- --                                                                            
+s 4                                                                             
+m 5                                                                             
+l 6                                                                             
+
+
+no rows selected
+
+SQL> start del.sql
+drop table storeitem
+           *
+ERROR at line 1:
+ORA-02449: unique/primary keys in table referenced by foreign keys 
+
+
+
+Table dropped.
+
+
+Table dropped.
+
+drop table custom
+           *
+ERROR at line 1:
+ORA-02449: unique/primary keys in table referenced by foreign keys 
+
+
+
+Table dropped.
+
+SQL> start del.sql
+drop table comicbook
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+drop table tshirt
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table dropped.
+
+drop table itemorder
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table dropped.
+
+SQL> spool off
